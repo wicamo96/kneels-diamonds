@@ -13,6 +13,12 @@
     text-align: center;
 }
 
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 input {
     width: 250px;
 }
