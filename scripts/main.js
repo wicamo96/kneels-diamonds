@@ -1,17 +1,20 @@
-import { metalOptions } from "./metalOptions.js"
-import { styleOptions } from "./styleOptions.js"
+import { metalOptions } from "./metalOptions.js";
+import { sizeOptions } from "./sizeOptions.js";
+import { styleOptions } from "./styleOptions.js";
 
-const container = document.querySelector("#container")
+const container = document.querySelector("#container");
 
 const render = async () => {
-    const metals = await metalOptions()
-    const styles = await styleOptions()
+    const metals = await metalOptions();
+    const styles = await styleOptions();
+    const sizes = await sizeOptions()
 
     container.innerHTML = `
     <section class='info'>
     ${metals}
     ${styles}
-    </section>`
+    ${sizes}
+    </section>`;
 }
 
-render()
+render();
