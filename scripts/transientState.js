@@ -7,16 +7,32 @@ const transientState = {
 
 // Functions to modify each property of transient state
 export const setMetal = (chosenMetal) => {
-    transientState.metalId = chosenMetal
-    console.log(transientState)
+    transientState.metalId = chosenMetal;
+    console.log(transientState);
 }
 
 export const setStyle = (chosenStyle) => {
-    transientState.styleId = chosenStyle
-    console.log(transientState)
+    transientState.styleId = chosenStyle;
+    console.log(transientState);
 }
 
 export const setSize = (chosenSize) => {
-    transientState.sizeId = chosenSize
-    console.log(transientState)
+    transientState.sizeId = chosenSize;
+    console.log(transientState);
+}
+
+// Function to convert transient state to permanent state
+export const saveCustomOrder = async () => {
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transientState)
+    }
+    
+    const response = await fetch("http://localhost:8088/orders", postOptions);
+
+    const customEvent = new CustomEvent("newOrderCreated");
+    document.dispatchEvent(customEvent);
 }
