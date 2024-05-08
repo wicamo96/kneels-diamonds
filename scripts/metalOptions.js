@@ -1,8 +1,12 @@
 import { setMetal } from "./transientState.js";
 
+// Define a function to change the metalId in the transientState
 const handleMetalChange = (changeEvent) => {
+    // Check the name in the state of what was clicked
     if (changeEvent.target.name === "metal") {
+        // Grab the id from the state of what was changes and parseInt
         const convertedToInteger = parseInt(changeEvent.target.value)
+        // Invoke function defined in the transientState module to change the metalId of the transientState
         setMetal(convertedToInteger)
     }
 }
@@ -14,6 +18,7 @@ export const metalOptions = async () => {
     // Store info as javascript objects in variable metals
     const metals = await response.json();
 
+    // Add an event listener that listens for the metal radio buttons to change
     document.addEventListener("change", handleMetalChange)
 
     // Begin building a string formatted for html
