@@ -1,8 +1,20 @@
+import { setMetal } from "./transientState.js";
+
+const handleMetalChange = (changeEvent) => {
+    if (changeEvent.target.name === "metal") {
+        const convertedToInteger = parseInt(changeEvent.target.value)
+        setMetal(convertedToInteger)
+    }
+}
+
+
 export const metalOptions = async () => {
     // Get info from api
     const response = await fetch("http://localhost:8088/metals");
     // Store info as javascript objects in variable metals
     const metals = await response.json();
+
+    document.addEventListener("change", handleMetalChange)
 
     // Begin building a string formatted for html
     let metalsHTML = `<section class="card"><h2 class='head'>Metals</h2>`;
