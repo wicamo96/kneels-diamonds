@@ -1,5 +1,5 @@
 export const sizeOptions = async () => {
-    // Get size info from the db
+    // Get size info from api
     const response = await fetch("http://localhost:8088/sizes");
     // Convert info to JS object and store in sizes variable
     const sizes = await response.json();
@@ -9,7 +9,7 @@ export const sizeOptions = async () => {
 
     // Iterate sizes info to pull id of the size and to display the size options
     for (const size of sizes) {
-        sizeHTML += `<input type='radio' name='size' value='${size.id}' />${size.carets} carets`;
+        sizeHTML += `<div><input type='radio' name='size' value='${size.id}' />${size.carets} carets</div>`;
     }
 
     // Close the section for the card

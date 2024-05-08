@@ -1,5 +1,5 @@
 export const styleOptions = async () => {
-    // Get style info from db
+    // Get style info from api
     const response = await fetch("http://localhost:8088/styles");
     // Convert into JS object and store style info in styles variable
     const styles = await response.json();
@@ -9,7 +9,7 @@ export const styleOptions = async () => {
 
     // Iterate through styles info to pull style id to reference and name to display
     for (const style of styles) {
-        stylesHTML += `<input type='radio' name='style' value='${style.id}' /> ${style.style}`;
+        stylesHTML += `<div><input type='radio' name='style' value='${style.id}' /> ${style.style}</div>`;
     }
 
     // Close section tag on the styles card
