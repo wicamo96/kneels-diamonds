@@ -2,7 +2,8 @@
 const transientState = {
     "metalId": 0,
     "styleId": 0,
-    "sizeId": 0
+    "sizeId": 0,
+    "jewelryTypeId": 0
 }
 
 // Functions to modify each property of transient state
@@ -19,6 +20,11 @@ export const setStyle = (chosenStyle) => {
 export const setSize = (chosenSize) => {
     transientState.sizeId = chosenSize;
     console.log(transientState);
+}
+
+export const setType = (chosenType) => {
+    transientState.jewelryTypeId = chosenType;
+    console.log(transientState)
 }
 
 // Function to convert transient state to permanent state

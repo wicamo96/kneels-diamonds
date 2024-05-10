@@ -73,39 +73,24 @@
   "orders": [
     {
       "metalId": 1,
-      "styleId": 2,
-      "sizeId": 5,
+      "styleId": 1,
+      "sizeId": 1,
+      "jewelryTypeId": 1,
       "id": 1
-    },
-    {
-      "metalId": 1,
-      "styleId": 3,
-      "sizeId": 2,
-      "id": 2
-    },
-    {
-      "metalId": 1,
-      "styleId": 2,
-      "sizeId": 3,
-      "id": 3
     },
     {
       "metalId": 5,
       "styleId": 3,
       "sizeId": 5,
-      "id": 4
+      "jewelryTypeId": 4,
+      "id": 2
     },
     {
       "metalId": 4,
-      "styleId": 3,
-      "sizeId": 5,
-      "id": 5
-    },
-    {
-      "metalId": 3,
-      "styleId": 3,
-      "sizeId": 5,
-      "id": 6
+      "styleId": 2,
+      "sizeId": 3,
+      "jewelryTypeId": 1,
+      "id": 3
     }
   ]
 }

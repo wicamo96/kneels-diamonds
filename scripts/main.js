@@ -1,3 +1,4 @@
+import { jewelryType } from "./jewelryType.js";
 import { metalOptions } from "./metalOptions.js";
 import { Orders } from "./orders.js";
 import { saveOrder } from "./saveOrder.js";
@@ -12,6 +13,7 @@ const render = async () => {
     const sizes = await sizeOptions();
     const submit = await saveOrder();
     const orderList = await Orders();
+    const type = await jewelryType();
 
     container.innerHTML = `
     <section class='info'>
@@ -22,6 +24,8 @@ const render = async () => {
     <article class='order'>
     <div class='button'>${submit}</div>
     </article>
+    <h3>Jewlery Type:</h3>
+    <div>${type}</div>
     <article class='orders'><h2>Custom Jewelry Orders</h2>
     <div>${orderList}</div>
     </article>`;

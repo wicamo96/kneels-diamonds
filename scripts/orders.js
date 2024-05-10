@@ -5,10 +5,15 @@ export const Orders = async () => {
     let ordersHTML = ``
 
     let temp = orders.map((order) => {
-            const orderPrice = order.metal.price + order.style.price + order.size.price
+            let orderPrice = (order.metal.price + order.style.price + order.size.price) * order.jewelryTypeId
+
+            orderPrice = orderPrice.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD"
+            })
 
            return `<div class='orderEntry'>
-            <strong>Order #${order.id} costs $${orderPrice}</strong>
+            <strong>Order #${order.id} costs ${orderPrice}</strong>
            </div>`
         }
     )
